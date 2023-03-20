@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 /**
- *main - outputs lower-case alphabets
+ *main - outputs lower & upper-case alphabets
  *Return: always 0 (success)
  */
 
@@ -12,6 +12,9 @@ for (alph = 'A'; alph <= 'Z'; ++alph)
 {
 small = tolower(alph);
 putchar(small);
+}
+for (alph = 'A'; alph <= 'Z'; ++alph)
+{
 putchar(alph);
 }
 putchar('\n');
