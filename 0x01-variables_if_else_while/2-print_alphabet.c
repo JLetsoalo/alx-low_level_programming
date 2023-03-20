@@ -7,9 +7,10 @@
 
 int main(void)
 {
-for (int alph = 'A'; alph <= 'Z'; ++alph)
+int alph, small;
+for (alph = 'A'; alph <= 'Z'; ++alph)
 {
-int small = tolower(alph);
+small = tolower(alph);
 putchar(small);
 }
 return (0);
