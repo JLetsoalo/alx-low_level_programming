@@ -13,5 +13,6 @@ for (alph = 'A'; alph <= 'Z'; ++alph)
 small = tolower(alph);
 putchar(small);
 }
+putchar('\n');
 return (0);
 }
