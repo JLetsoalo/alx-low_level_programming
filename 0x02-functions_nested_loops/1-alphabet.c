@@ -14,5 +14,4 @@ small = tolower(alph);
 _putchar(alph);
 }
 _putchar('\n');
-return (0);
 }
