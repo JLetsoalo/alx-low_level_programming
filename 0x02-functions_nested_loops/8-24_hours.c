@@ -10,7 +10,7 @@ int t_hour = 0;
 int t_min = 0;
 while (t_hour < 24)
 {
-while (t_min <= 60)
+while (t_min < 60)
 {
 _putchar('0' + (t_hour / 10));
 _putchar('0' + (t_hour % 10));
