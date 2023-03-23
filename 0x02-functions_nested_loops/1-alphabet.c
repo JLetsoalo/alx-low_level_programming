@@ -1,4 +1,5 @@
 #include "main.h"
+#include <ctype.h>
 /**
  *print_alphabet - print lowercase alphabet
  *Return: always 0
