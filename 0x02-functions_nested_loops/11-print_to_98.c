@@ -19,9 +19,9 @@ _putchar(' ');
 {
 _putchar('0' + (n / 10));
 _putchar('0' + (n % 10));
+}
 _putchar(',');
 _putchar(' ');
-}
 }
 _putchar('\n');
 }
