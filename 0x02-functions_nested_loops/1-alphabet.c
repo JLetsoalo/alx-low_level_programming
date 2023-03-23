@@ -6,12 +6,11 @@
 
 void print_alphabet(void)
 {
-char alph;
-alph = 'a';
-while (alph <= 'z')
-{
-_putchar(alph);
-alph++;
-}
-_putchar('\n');
+  int alph, small;
+  for (alph = 'A'; alph <= 'Z'; alph++)
+    {
+      small = tolower(alph);
+      _putchar(small);
+    }
+  _putchar('\n');
 }
