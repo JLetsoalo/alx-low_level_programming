@@ -12,10 +12,8 @@ for (n = 0; n <=98; n++)
 if (n <= 9)
 {
 _putchar('0' + n);
-_putchar(',');
-_putchar(' ');
 }
- else if (n >9)
+else if (n >9)
 {
 _putchar('0' + (n / 10));
 _putchar('0' + (n % 10));
