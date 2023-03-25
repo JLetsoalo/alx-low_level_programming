@@ -7,34 +7,20 @@
 
 void print_to_98(int n)
 {
-while (n < 98)
-{
-if (n <= 9)
-{
-_putchar(n);
-_putchar(',');
-}
-else if (n > 9 && n < 98)
-{
-_putchar('0' + (n / 10));
-_putchar('0' + (n % 10));
-_putchar(',');
-_putchar(' ');
-}
-n++;
-}
-while (n > 98)
-{
-_putchar('0' + (n / 10));
-_putchar('0' + (n % 10));
-_putchar(',');
-_putchar(' ');
-n--;
-}
-if (n == 98)
-{
-_putchar('0' + (n / 10));
-_putchar('0' + (n % 10));
-_putchar('\n');
-}
+	while (n < 98)
+	{
+		printf("%d, ", n);
+		n++;
+	}
+
+	while (n > 98)
+	{
+		printf("%d, ", n);
+		n--;
+	}
+
+	if (n == 98)
+		printf("%d", n);
+
+	printf("\n");
 }
