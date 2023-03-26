@@ -1,7 +1,6 @@
 #include <stdio.h>
 /**
  * main - entry poiny
- * continuechar - continues print in new function
  * Return: 1
  */
 
@@ -41,10 +40,6 @@ int main(void)
 	putchar('"');
 	putchar(' ');
 	putchar('-');
-	return (1);
-}
-int continuechar(void)
-{
 	putchar(' ');
 	putchar('D');
 	putchar('o');
