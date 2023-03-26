@@ -41,6 +41,7 @@ int main(void)
 	putchar('"');
 	putchar(' ');
 	putchar('-');
+	return (1);
 }
 int continuechar(void)
 {
