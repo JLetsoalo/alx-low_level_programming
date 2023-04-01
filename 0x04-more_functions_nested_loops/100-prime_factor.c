@@ -7,9 +7,9 @@
  * Return: long long integer
  */
 
-long long largest_prime_factor(long long num)
+long largest_prime_factor(long num)
 {
-	long long factor = 2;
+	long factor = 2;
 
 	while (factor * factor <= num)
 	{
@@ -27,9 +27,9 @@ long long largest_prime_factor(long long num)
 
 int main(void)
 {
-	long long num = 612852475143;
-	long long largest_factor = largest_prime_factor(num);
+	long num = 612852475143;
+	long largest_factor = largest_prime_factor(num);
 
-	printf("%lld\n", largest_factor);
+	printf("%ld\n", largest_factor);
 	return (0);
 }
