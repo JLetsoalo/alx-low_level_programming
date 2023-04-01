@@ -1,8 +1,8 @@
 #include "main.h"
 
-/**
+7/**
  * string_toupper - converts lowercase string to upper
- * @ : character
+ * @str: character
  * Return: string
  */
 
