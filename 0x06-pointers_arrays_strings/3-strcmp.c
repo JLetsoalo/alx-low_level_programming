@@ -2,7 +2,8 @@
 
 /**
  * _strcmp - compares two strings
- * @i: loop counter
+ * @s1: first string
+ * @s2: second string
  * Return: always 0
  */
 

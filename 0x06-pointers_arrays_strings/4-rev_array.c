@@ -2,8 +2,8 @@
 
 /**
  * reverse_array - reverses index of array
- * @i: loop counter
- * @j: temporarily hold array value
+ * @a: array index value
+ * @n: number of string to reverse
  */
 
 void reverse_array(int *a, int n)

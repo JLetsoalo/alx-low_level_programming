@@ -2,9 +2,9 @@
 
 /**
  * _strncat - concatenates two strings
- * @destlen: destination string
- * @srclen: soirce string
- * @i: loop counter
+ * @dest: destination array
+ * @src: source array
+ * @n: number of arrays to concatenate
  * Return: destination string
  */
 

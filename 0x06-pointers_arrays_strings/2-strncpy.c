@@ -2,7 +2,9 @@
 
 /**
  * _strncpy - copies a string
- * @i: loop counter
+ * @dest: destination
+ * @src: array source
+ * @n: number of strings to copy
  * Return: destination string
  */
 

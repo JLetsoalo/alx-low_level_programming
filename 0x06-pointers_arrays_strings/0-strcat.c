@@ -2,9 +2,8 @@
 
 /**
  * _strcat - concatenates strings
- * @srclen: source string length
- * @destlen: destination string length
- * @i: for loop counter
+ * @dest: destination array
+ * @src: source array variable
  * Return: destination string
  */
 
