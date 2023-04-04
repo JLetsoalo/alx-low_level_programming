@@ -1,6 +1,8 @@
 #define MAIN_H
 #ifndef MAIN_H
 
+#include <stdio.h>
+
 /**
  * Function prototype for 0x07-even more poiters, arrays and strings.
  */
