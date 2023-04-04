@@ -13,7 +13,7 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 	int length;
 
 	length = n;
-	while (length > 0)
+	if (length > 0)
 	{
 	int a;
 
