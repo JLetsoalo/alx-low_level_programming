@@ -2,9 +2,10 @@
 #ifndef MAIN_H
 
 #include <stdio.h>
+#define NULL 0
 
-/**
- * Function prototype for 0x07-even more poiters, arrays and strings.
+ /** 
+  * Function prototype for 0x07-even more poiters, arrays and strings.
  */
 
 int _putchar(char c);
