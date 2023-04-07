@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * find_root - get square root of n,from smallest number
+ * get_root - get square root of n,from smallest number
  * @n: number to check
  * @root: check if number is natural root
  * Return: -1 or root
