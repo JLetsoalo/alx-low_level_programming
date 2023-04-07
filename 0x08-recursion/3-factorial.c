@@ -31,7 +31,7 @@ int factorial(int n)
 		return (-1);
 	}
 	else if (n > 0)
-		return (factorial(n) - 1)
+		return (factorial(n) - 1);
 
 	n++;
 }
