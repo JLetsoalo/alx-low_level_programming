@@ -11,7 +11,7 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *ccat;
-	int lengtg1 = 0;
+	int length1 = 0;
 	int length2 = 0;
 	int x = 0;
 	int y = 0;
@@ -26,6 +26,7 @@ char *str_concat(char *s1, char *s2)
 
 	while (*(s2 + y))
 		length2++, y++;
+
 	length2++;
 
 	ccat = malloc(sizeof(char) * (length1 + length2));
