@@ -4,7 +4,7 @@
  * substring_match - matching sub strings
  * @s1: first string
  * @s2: second string
- * after_wldcd: char after wildcard
+ * @after_wldcd: char after wildcard
  * Return: substring
  */
 
