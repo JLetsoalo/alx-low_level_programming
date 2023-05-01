@@ -17,13 +17,13 @@ int len(char *str)
 }
 
 /**
- * strcpy - copying the string pointed to src
+ * _strcpy - copying the string pointed to src
  * @dest: destination buffer
  * @src: source to copy
  * Return: copied source
  */
 
-char *strcpy(char *dest, char *src)
+char *_strcpy(char *dest, char *src)
 {
 	int d;
 
