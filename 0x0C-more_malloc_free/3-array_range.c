@@ -19,7 +19,7 @@ int *array_range(int min, int max)
 	pointr = malloc(sizeof(int) * x);
 	if (pointr == NULL)
 		return (NULL);
-	
+
 	i = 0;
 	while (i < x)
 	{
