@@ -8,11 +8,11 @@
 
 int _strlen(char *string)
 {
-	int x;
+	int b;
 
-	for (x = 0; string[x] != '\0'; x++)
+	for (b = 0; string[b] != '\0'; b++)
 		;
-	return (x);
+	return (b);
 }
 
 /**
@@ -29,7 +29,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int num, length, x, y;
 
 	num = n;
-
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
