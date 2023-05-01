@@ -41,17 +41,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	length = _strlen(s1) + num + 1;
 
-	pointr = malloc(sizeof(char) * length); // added semicolon here
+	pointr = malloc(sizeof(char) * length);
 	if (pointr == NULL)
 		return (NULL);
 
 	for (x = 0; s1[x] != '\0'; x++)
-		ptr[x] = s1[x];
+		pointr[x] = s1[x];
 
 	for (y = 0; y < num; y++)
 		pointr[x + y] = s2[y];
 
 	pointr[x + y] = '\0';
 
-	return pointr;
+	return (pointr);
 }
