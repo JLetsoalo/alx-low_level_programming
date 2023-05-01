@@ -6,6 +6,21 @@
  * Return: length of string
  */
 
+
+C Code Style Update.
+
+
+User
+Fix following c code C90 style:
+
+#include "main.h"
+
+/**
+ * _strlen - calculate and return string length
+ * @string: string to get size of
+ * Return: length of string
+ */
+
 int _strlen(char *string)
 {
 	int x;
@@ -60,4 +75,72 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	pointr[x + y] = '\0';
 
 	return (pointr);
+}
+
+ChatGPT
+Here is the updated C90 style code:
+
+c
+Copy code
+#include "main.h"
+
+/**
+ * _strlen - calculate and return string length
+ * @string: string to get size of
+ * Return: length of string
+ */
+
+int _strlen(char *string)
+{
+	int x;
+
+	for (x = 0; string[x] != '\0'; x++)
+		;
+	return (x);
+}
+
+/**
+ * string_nconcat - concatenate two strings
+ * @s1: first string
+ * @s2: second string
+ * @n: size of memory to allocate
+ * Return: concatenated string
+ */
+
+char *string_nconcat(char *s1, char *s2, unsigned int n)
+{
+	char *pointr;
+	int num, length, x, y;
+
+	num = n;
+
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	if (num < 0)
+		return (NULL);
+
+	if (num >= _strlen(s2))
+		num = _strlen(s2);
+
+	length = _strlen(s1) + num + 1;
+
+	pointr = malloc(sizeof(char) * length); // added semicolon here
+	if (pointr == NULL)
+		return (NULL);
+
+	x = 0;
+	while (s1[x] != '\0')
+	{
+		pointr[x] = s1[x];
+		x++;
+	}
+
+	for (y = 0; y < num; y++)
+		pointr[x + y] = s2[y];
+
+	pointr[x + y] = '\0';
+
+	return pointr;
 }
