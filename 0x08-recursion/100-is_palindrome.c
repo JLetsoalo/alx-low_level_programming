@@ -4,6 +4,7 @@
  * compare - compares strings
  * @head: head
  * @tail: side b (tail)
+ * Return: always 0 (success)
  */
 
 int compare(char *head, char *tail)
