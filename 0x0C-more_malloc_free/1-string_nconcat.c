@@ -130,12 +130,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (pointr == NULL)
 		return (NULL);
 
-	x = 0;
-	while (s1[x] != '\0')
-	{
-		pointr[x] = s1[x];
-		x++;
-	}
+	for (x = 0; s1[x] != '\0'; x++)
+		ptr[x] = s1[x];
 
 	for (y = 0; y < num; y++)
 		pointr[x + y] = s2[y];
