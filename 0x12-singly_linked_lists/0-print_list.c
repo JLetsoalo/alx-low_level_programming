@@ -3,18 +3,6 @@
 #include <unistd.h>
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
  * print_list - prints all items contained in list_t
  * @h: The linked list
  * Return: number of linked nodes in the list
@@ -22,23 +10,18 @@ int _putchar(char c)
 
 size_t print_list(const list_t *h)
 {
-	size_t n_nodes;
-
-	if (!h)
-		return (0);
-	n_nodes = 0;
-	do {
+	size_t v = 0;
+	
+	while (h)
+	{
 		if (!h->str)
 			printf("[0] (nil)\n");
 		else
-			printf("[%d] %s\n", h->len, h->str);
-
+			printf("[%u] %s\n", h->len, h->str);
 		h = h->next;
-		n_nodes++;
-	}  while (h);
-
-	return (n_nodes);
-
+		v++;
+	}
+	return (v); 
 
 /******** old code ************
  *
