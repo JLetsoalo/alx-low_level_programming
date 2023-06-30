@@ -22,6 +22,28 @@ int _putchar(char c)
 
 size_t print_list(const list_t *h)
 {
+	size_t n_nodes;
+
+	if (!h)
+		return (0);
+	n_nodes = 0;
+	do {
+		if (!h->str)
+			printf("[0] (nil)\n");
+		else
+			printf("[%d] %s\n", h->len, h->str);
+
+		h = h->next;
+		n_nodes++;
+	}  while (h);
+
+	return (n_nodes);
+
+
+/******** old code ************
+ *
+size_t print_list(const list_t *h)
+{
     size_t coun = 0;
     char *str = h->str;
 
@@ -76,5 +98,5 @@ size_t print_list(const list_t *h)
         coun++;
         h = h->next;
     }
-    return coun;
+    return coun; */
 }
