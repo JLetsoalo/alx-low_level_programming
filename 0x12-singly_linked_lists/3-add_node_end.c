@@ -36,10 +36,10 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 
 	new_node->str = strdup(str);
-	new_node->leng = _strlen(str);
+	new_node->len = _strlen(str);
 	new_node->next = NULL;
 
-	if (*head == NULL) /* if no list nodes, set new_node to beginning */
+	if (*head == NULL)
 		*head = new_node;8
 	else
 	{

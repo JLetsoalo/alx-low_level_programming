@@ -16,7 +16,7 @@ int _strlen(const char *str)
 }
 
 /**
- * add_node - makes node ta beginning of linked list
+ * add_node - makes node at start of linked list
  * @head: all linked list
  * @str: data for new node
  * Return: address of new element, or NULL if failed
@@ -36,7 +36,7 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 
 	new_node->str = strdup(str);
-	new_node->leng = _strlen(str);
+	new_node->len = _strlen(str);
 
 	if (head == NULL)
 		new_node->next = NULL;
