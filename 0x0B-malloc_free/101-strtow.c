@@ -144,7 +144,7 @@ void free_list(char **list, int n_strings)
 	int x;
 
 	for (x = 0; x < n_strings; x++)
-		free(list[i]);
+		free(list[x]);
 
 	free(list);
 }
