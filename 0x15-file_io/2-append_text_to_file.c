@@ -40,8 +40,8 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (1);
 	}
 
-	/* write content */
-	n_wrote = write(fd, text_content, _strlen(text_content));
+	/* write content to file */
+	n_wrote = write(fldesc, text_content, _strlen(text_content));
 	if (n_wrote == -1 || n_wrote != _strlen(text_content))
 	{
 		close(fldesc);

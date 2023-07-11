@@ -42,6 +42,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	close(fldesc);
-	return (n_read);
+	return (n_scan);
 
 }

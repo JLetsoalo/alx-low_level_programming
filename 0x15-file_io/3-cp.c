@@ -10,7 +10,7 @@
  * return: 0 success, -1 failure
  */
 
-int _cp(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	if (argc != 3)
 	{
