@@ -5,9 +5,9 @@
 #include <elf.h>
 
 /**
- * peimt_elf_header - print elf header
- * Elf32_Ehdr: elf header
- * header: header to get
+ * print_elf_header - print elf header
+ * @Elf32_Ehdr: elf header
+ * @header: header to get
  */
 
 void print_elf_header(const Elf32_Ehdr *header)
@@ -34,8 +34,8 @@ void print_elf_header(const Elf32_Ehdr *header)
 
 /**
  * main - main program to get elf header
- * argc: argument 1
- * argv: argument 2
+ * @argc: argument 1
+ * @argv: argument 2
  * Return: 0 on success
  */
 int main(int argc, char *argv[])
