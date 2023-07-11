@@ -4,7 +4,6 @@
 #include <unistd.h>
 #include <elf.h>
 
-#define ERROR_MSG(...) fprintf(stderr, __VA_ARGS__)
 /**
  * peimt_elf_header - print elf header
  * Elf32_Ehdr: elf header
@@ -13,8 +12,10 @@
 
 void print_elf_header(const Elf32_Ehdr *header)
 {
+	int i;
+
 	printf("Magic: ");
-	for (int i = 0; i < EI_NIDENT; i++)
+	for (i = 0; i < EI_NIDENT; i++)
 	{
 		printf("%02x ", header->e_ident[i]);
 	}
@@ -37,26 +38,26 @@ void print_elf_header(const Elf32_Ehdr *header)
  * argv: argument 2
  * Return: 0 on success
  */
-
 int main(int argc, char *argv[])
 {
+	int fd = open(argv[1], O_RDONLY);
+	Elf32_Ehdr header;
+
 	if (argc != 2)
 	{
-		ERROR_MSG("Usage: %s elf_filename\n", argv[0]);
+		fprintf(stderr, "Usage: %s elf_filename\n", argv[0]);
 		return (98);
 	}
 
-	int fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
-		ERROR_MSG("Error opening file: %s\n", argv[1]);
+		fprintf(stderr, "Error opening file: %s\n", argv[1]);
 		return (98);
 	}
 
-	Elf32_Ehdr header;
 	if (read(fd, &header, sizeof(header)) != sizeof(header))
 	{
-		ERROR_MSG("Error reading ELF header\n");
+		fprintf(stderr, "Error reading ELF header\n");
 		close(fd);
 		return (98);
 	}
@@ -66,7 +67,7 @@ int main(int argc, char *argv[])
 			header.e_ident[EI_MAG2] != ELFMAG2 ||
 			header.e_ident[EI_MAG3] != ELFMAG3)
 	{
-		ERROR_MSG("Not an ELF file: %s\n", argv[1]);
+		fprintf(stderr, "Not an ELF file: %s\n", argv[1]);
 		close(fd);
 		return (98);
 	}
