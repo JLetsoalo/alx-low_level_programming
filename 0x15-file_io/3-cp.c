@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /******* SWITCH CASE FOR POSSIBLE ERRORS ********/
 /**
