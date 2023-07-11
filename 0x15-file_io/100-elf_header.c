@@ -6,7 +6,6 @@
 
 /**
  * print_elf_header - print elf header
- * @Elf32_Ehdr: elf header
  * @header: header to get
  */
 
