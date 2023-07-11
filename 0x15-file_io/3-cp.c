@@ -1,70 +1,69 @@
-#include "main.h"
-#include <fcntl.h>
-#include <errno.h>
+#include "holberton.h"
 
-#define BUFFER_SIZE 1024
+/******* SWITCH CASE FOR POSSIBLE ERRORS ********/
 /**
- * _cp - program to copy files
- * @argc: test 1
- * @argv: test 2
- * return: 0 success, -1 failure
+ * __exit - prints error messages on exit.
+ * @error: exit value or file descriptor
+ * @s: str is a name of the two filenames
+ * @fd: file descriptor
+ * Return: 0 on success
+ **/
+
+int __exit(int error, char *s, int fd)
+{
+	switch (error)
+	{
+	case 97:
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(error);
+	case 98:
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", s);
+		exit(error);
+	case 99:
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", s);
+		exit(error);
+	case 100:
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(error);
+	default:
+		return (0);
+	}
+}
+
+/**
+ * main - copies contents of one file to another
+ * @argc: ./a.out copyfromfile copytofile
+ * @argv: first is file to copy from (fl_1), second is file to copy to (fl_2)
+ * Return: 0 (success), 97-100 (exit value errors)
  */
 
 int main(int argc, char *argv[])
 {
+	int fl_1, fl_2, n_scan, n_wrote;
+	char *buffer[1024];
+
 	if (argc != 3)
-	{
-		fprintf(stderr, "Usage: %s file_from file_to\n", argv[0]);
-		exit(97);
-	}
-	
-	char *file_from = argv[1];
-	char *file_to = argv[2];
+		__exit(97, NULL, 0);
 
-	int fd_from = open(file_from, O_RDONLY);
-	if (fd_from == -1)
-	{
-		fprintf(stderr, "Error: Can't read from file %s\n", file_from);
-		exit(98);
-	}
+	fl_2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
+	if (fl_2 == -1)
+		__exit(99, argv[2], 0);
 
-	int fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-	if (fd_to == -1)
+	fl_1 = open(argv[1], O_RDONLY);
+	if (fl_1 == -1)
+		__exit(98, argv[1], 0);
+
+	while ((n_scan = read(fl_1, buffer, 1024)) != 0)
 	{
-		fprintf(stderr, "Error: Can't write to %s\n", file_to);
-		exit(99);
+		if (n_scan == -1)
+			__exit(98, argv[1], 0);
+
+		n_wrote = write(fl_2, buffer, n_scan);
+		if (n_wrote == -1)
+			__exit(99, argv[2], 0);
 	}
 
-	char buffer[BUFFER_SIZE];
-	ssize_t bytes_read, bytes_written;
-
-	while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
-	{
-		bytes_written = write(fd_to, buffer, bytes_read);
-		if (bytes_written == -1)
-		{
-			fprintf(stderr, "Error: Can't write to %s\n", file_to);
-			exit(99);
-		}
-	}
-
-	if (bytes_read == -1)
-	{
-		fprintf(stderr, "Error: Can't read from file %s\n", file_from);
-		exit(98);
-	}
-
-	if (close(fd_from) == -1)
-	{
-		fprintf(stderr, "Error: Can't close fd %d\n", fd_from);
-		exit(100);
-	}
-
-	if (close(fd_to) == -1)
-	{
-		fprintf(stderr, "Error: Can't close fd %d\n", fd_to);
-		exit(100);
-	}
-
+	close(fl_2) == -1 ? (__exit(100, NULL, fl_2)) : close(fl_2);
+	close(fl_1) == -1 ? (__exit(100, NULL, fl_1)) : close(fl_1);
 	return (0);
 }
