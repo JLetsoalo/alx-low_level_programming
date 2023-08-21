@@ -32,7 +32,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	tmp = 0;
 	for (x = 0; x < leng; x++)
 	{
-		if (argv[1][i] > tmp)
+		if (argv[1][x] > tmp)
 			tmp = argv[1][x];
 	}
 	srand(tmp ^ 14);
